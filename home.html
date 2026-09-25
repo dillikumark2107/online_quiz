@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+    <header class="header">
+        <h2 id="hello"></h2>
+        <nav class="nav">
+            <button onclick="quiz()">My Quiz History</button>
+            <button><a href="register.html">Register</a></button>
+            <button onclick="logout()"><a >Logout</a></button>
+        </nav>
+    </header>
+    <div>
+        <h1>Welcome To Online Quiz!</h1>
+        <p>Test your Knowledge</p>
+        <p>Challenge yourself with simpal interactive Quiz</p>
+        <button > <a href="./catagory.html">Start Quiz</a></button>
+    </div>
+
+    <script>
+
+            console.log(localStorage.getItem("loggedInUser"));
+            console.log(localStorage.getItem("loggedInUser"));
+
+            let loggedUser = JSON.parse(localStorage.getItem("loggedInUser") );
+
+            document.getElementById("hello").textContent = "Welcome " + loggedUser.username ;
+
+            function logout() {
+                localStorage.removeItem("loggedInUser");
+                window.location.href = "login.html";
+            }
+
+            function quiz(){
+                window.location.href = "quizhistory.html"
+            }
+        
+    </script>
+    
+</body>
+</html>
